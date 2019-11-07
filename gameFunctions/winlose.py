@@ -8,17 +8,27 @@ def winorlose(status):
 	print("You", status + "! Would you like to play again?")
 
 	choice = input("Y / N: ")
+	print("=============")
 	print(choice)
+	print("=============")
 
 	if (choice is "N") or (choice is "n"):
+		print("**********************")
 		print("You chose to quit.")
 		exit()
+		print("**********************")
 
 	elif (choice is "Y") or (choice is "y"):
 		# reset the game so that we can start all over again
 		# this will break, currently - we will fix this next class
-		player_lives = 1
-		computer_lives = 1
+		
+		global computer
+		global computer_lives
+		global player
+		global player_lives
+
+		player_lives = 2
+		computer_lives = 2
 		player = False
 		computer = choices[randint(0,2)]
 	

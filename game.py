@@ -3,8 +3,8 @@ from random import randint
 from gameFunctions import winlose
 
 # set up some variables for player and AI lives
-player_lives = 1
-computer_lives = 1
+player_lives = 2
+computer_lives = 2
 
 # choices is an array => an array is a container that can hold multiple values
 # arrays are 0-based -> first entry is 0, 2nd is 1, 3rd is 2 etc
@@ -24,11 +24,15 @@ while player is False:
 	print("Choose your weapon!\n")
 	print("**********************************")
 
+
+	print("=====================================")
 	player = input("choose rock, paper or scissors: ")
 	player = player.lower()
 
 	print("computer chose ", computer, "\n")
 	print("player chose ", player, "\n")
+
+	print("=====================================")
 
 	if player == "quit":
 		exit()
@@ -60,7 +64,9 @@ while player is False:
 			computer_lives = computer_lives - 1
 
 	else:
+		print("=====================================")
 		print("That's not a valid choice, try again")
+		print("=====================================")
 
 
 	# handle all lives lost for player or AI
