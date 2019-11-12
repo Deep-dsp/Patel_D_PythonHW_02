@@ -1,4 +1,5 @@
 from random import randint
+from gameFunctions import gameVars
 # define a python function that takes an argument
 def winorlose(status): 
 	# status will be either won or lost - you're passing this in as an argument
@@ -21,16 +22,14 @@ def winorlose(status):
 	elif (choice is "Y") or (choice is "y"):
 		# reset the game so that we can start all over again
 		# this will break, currently - we will fix this next class
-		
-		global computer
-		global computer_lives
-		global player
-		global player_lives
 
-		player_lives = 2
-		computer_lives = 2
-		player = False
-		computer = choices[randint(0,2)]
+
+
+		gameVars.player_lives = 1
+		gameVars.computer_lives = 1
+		gameVars.total_lives = 1
+		gameVars.player = False
+		gameVars.computer = gameVars.choices[randint(0,2)]
 	
 	else:
 		# not a y or n, so make the user pick a valid choice
