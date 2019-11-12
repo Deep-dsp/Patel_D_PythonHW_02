@@ -1,6 +1,6 @@
 # import the random package so that we can generate a random choice
 from random import randint
-from gameFunctions import winlose, gameVars
+from gameFunctions import winlose, gameVars, compare
 
 while gameVars.player is False:
 	# set player to True
@@ -20,40 +20,41 @@ while gameVars.player is False:
 
 	print("=====================================")
 
-	if gameVars.player == "quit":
-		exit()
-	elif gameVars.computer == gameVars.player:
-		print("tie! no one wins, play again")
+	compare.comparechoices(gameVars.computer, gameVars.player)
 
-	elif gameVars.player == "rock":
-		if gameVars.computer == "paper":
-			print("You lose!", gameVars.computer, "covers", gameVars.player, "\n")
-			gameVars.player_lives = gameVars.player_lives - 1
-		else:
-			print("You win!", gameVars.player, "smashes", gameVars.computer, "\n")
-			gameVars.computer_lives = gameVars.computer_lives - 1
+	# if gameVars.player == "quit":
+	# 	exit()
+	# elif gameVars.computer == gameVars.player:
+	# 	print("tie! no one wins, play again")
 
-	elif gameVars.player == "paper":
-		if gameVars.computer == "scissors":
-			print("You lose!", gameVars.computer, "cuts", gameVars.player, "\n")
-			gameVars.player_lives = gameVars.player_lives - 1
-		else:
-			print("You win!", player, "covers", gameVars.computer, "\n")
-			gameVars.computer_lives = gameVars.computer_lives - 1
+	# elif gameVars.player == "rock":
+	# 	if gameVars.computer == "paper":
+	# 		print("You lose!", gameVars.computer, "covers", gameVars.player, "\n")
+	# 		gameVars.player_lives = gameVars.player_lives - 1
+	# 	else:
+	# 		print("You win!", gameVars.player, "smashes", gameVars.computer, "\n")
+	# 		gameVars.computer_lives = gameVars.computer_lives - 1
 
-	elif gameVars.player == "scissors":
-		if gameVars.computer == "rock":
-			print("You lose!", gameVars.computer, "smashes", gameVars.player, "\n")
-			gameVars.player_lives = gameVars.player_lives - 1
-		else:
-			print("You win!", player, "cuts", gameVars.computer, "\n")
-			gameVars.computer_lives = gameVars.computer_lives - 1
+	# elif gameVars.player == "paper":
+	# 	if gameVars.computer == "scissors":
+	# 		print("You lose!", gameVars.computer, "cuts", gameVars.player, "\n")
+	# 		gameVars.player_lives = gameVars.player_lives - 1
+	# 	else:
+	# 		print("You win!", player, "covers", gameVars.computer, "\n")
+	# 		gameVars.computer_lives = gameVars.computer_lives - 1
 
-	else:
-		print("=====================================")
-		print("That's not a valid choice, try again")
-		print("=====================================")
+	# elif gameVars.player == "scissors":
+	# 	if gameVars.computer == "rock":
+	# 		print("You lose!", gameVars.computer, "smashes", gameVars.player, "\n")
+	# 		gameVars.player_lives = gameVars.player_lives - 1
+	# 	else:
+	# 		print("You win!", player, "cuts", gameVars.computer, "\n")
+	# 		gameVars.computer_lives = gameVars.computer_lives - 1
 
+	# else:
+	# 	print("=====================================")
+	# 	print("That's not a valid choice, try again")
+	# 	print("====================================
 
 	# handle all lives lost for player or AI
 	if gameVars.player_lives is 0:
